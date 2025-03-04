@@ -26,16 +26,16 @@ function agregarAmigo() {
 function actualizarLista() {
 
     // Obtener elemento de la lista
-    let lista = document.getElementById("listaAmigos");
+    let listaAmigos = document.getElementById("listaAmigos");
 
     // Limpiar la lista
-    lista.innerHTML = "";
+    listaAmigos.innerHTML = "";
 
     // Iterar en array amigos y agregar cada amigo como un <li> a la lista
     for (let amigo of amigos) {
         let li = document.createElement("li");
         li.appendChild(document.createTextNode(amigo));
-        lista.appendChild(li);
+        listaAmigos.appendChild(li);
     }
     
 }
@@ -55,4 +55,8 @@ function sortearAmigo() {
     // Mostrar el amigo seleccionado
     let resultado = document.getElementById("resultado");
     resultado.innerHTML = `El amigo sorteado es: ${amigoSorteado}`;
+
+    // Limpiar la lista de amigos
+    let limpiarLista = document.getElementById("listaAmigos");
+    limpiarLista.innerHTML = "";
 }
